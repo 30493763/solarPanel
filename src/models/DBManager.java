@@ -139,8 +139,8 @@ public class DBManager {
         
     } // end of loadStaff()
     
-    public ArrayList<Staff> loadProducts() {
-        ArrayList<Staff> allProducts = new ArrayList<>();
+    public ArrayList<Product> loadProducts() {
+        ArrayList<Product> allProducts = new ArrayList<>();
 
         try {
             Class.forName(driver);
@@ -160,7 +160,8 @@ public class DBManager {
 
                             
                 if(productType.equals("Solar Panel")){
-//                    SolarPanel sPanel = new SolarPanel();
+                    SolarPanel sPanelFromDB = new SolarPanel(productId, productName, stockLevel, price, wattageOutput);
+                    allProducts.add(sPanelFromDB);
                 }
                 else if (productType.equals("Heat Pump")){
                     HeatPump hPumpFromDB = new HeatPump(productId, productName, stockLevel, price, efficiencyRating);
