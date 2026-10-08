@@ -137,5 +137,43 @@ public class DBManager {
            return allStaffs;
         }
         
-    } 
+    } // end of loadStaff()
+    
+    public ArrayList<Staff> loadProducts() {
+        ArrayList<Staff> allProducts = new ArrayList<>();
+
+        try {
+            Class.forName(driver);
+        
+             Connection conn = DriverManager.getConnection(connectionString);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM Products");
+            
+            while(rs.next()) { 
+                int productId = rs.getInt("ProductId");
+                String productName = rs.getString("ProductName");
+                double price = rs.getDouble("Price");
+                int stockLevel = rs.getInt("StockLevel");
+                String productType = rs.getString("ProductType");
+                int wattageOutput = rs.getInt("WattageOutput");       
+                double efficiencyRating = rs.getDouble("EfficiencyRating");                        
+
+                            
+                if(productType.equals("Solar Panel")){
+//                    SolarPanel sPanel = new SolarPanel();
+                }
+                else if (productType.equals("Heat Pump")){
+                    HeatPump hPumpFromDB = new HeatPump(productId, productName, stockLevel, price, efficiencyRating);
+                    allProducts.add(hPumpFromDB);
+                }
+
+            }// end of while
+        } catch (Exception ex) {
+            System.out.println("Error loading customer: " + ex.getMessage());
+        } 
+        finally{
+           return allProducts;
+        }
+        
+    } // end of loadProducts()
 }

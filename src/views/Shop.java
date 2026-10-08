@@ -4,6 +4,10 @@
  */
 package views;
 
+import java.util.ArrayList;
+import models.DBManager;
+import models.Product;
+
 /**
  *
  * @author lichi
@@ -11,11 +15,14 @@ package views;
 public class Shop extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Shop.class.getName());
-
+    private ArrayList<Product> allProducts;
     /**
      * Creates new form Shop
      */
     public Shop() {
+        DBManager db = new DBManager();
+        allProducts = db.loadAnimals();
+        initComponents();
         initComponents();
     }
 
@@ -28,17 +35,63 @@ public class Shop extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblShop_SelectCategory = new javax.swing.JLabel();
+        lblShop_SelectCategory1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lstSelectProduct = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lstSelectCategory = new javax.swing.JList<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblShop_SelectCategory.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblShop_SelectCategory.setText("Select Product");
+
+        lblShop_SelectCategory1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblShop_SelectCategory1.setText("Select Category");
+
+        jScrollPane1.setViewportView(lstSelectProduct);
+
+        lstSelectCategory.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "HeatPump", "SolarPanel" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(lstSelectCategory);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblShop_SelectCategory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(78, 78, 78))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addComponent(lblShop_SelectCategory1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(370, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(lblShop_SelectCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(49, 49, 49)
+                    .addComponent(lblShop_SelectCategory1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(363, Short.MAX_VALUE)))
         );
 
         pack();
@@ -70,5 +123,11 @@ public class Shop extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblShop_SelectCategory;
+    private javax.swing.JLabel lblShop_SelectCategory1;
+    private javax.swing.JList<String> lstSelectCategory;
+    private javax.swing.JList<String> lstSelectProduct;
     // End of variables declaration//GEN-END:variables
 }
