@@ -6,6 +6,7 @@ package models;
  */
 public class HeatPump extends Product {
     // Private Attributes
+    private String productType;
     private double efficiencyRating;
 
     // Constructors
@@ -13,6 +14,7 @@ public class HeatPump extends Product {
     // Default constructor (HeatPump())
     public HeatPump() {
         super();
+        productType = "Heat Pump";
         efficiencyRating = 0;
     }
 
@@ -23,6 +25,7 @@ public class HeatPump extends Product {
                     double efficiencyRatingIn) {
 //        this.ProductId = 0;
         super(0, ProductNameIn, StockLevelIn, PriceIn); // Call parent constructor without ProductId
+        this.productType = "Heat Pump";
         this.efficiencyRating = efficiencyRatingIn;
         
     }
@@ -34,7 +37,18 @@ public class HeatPump extends Product {
                     double Price,
                     double efficiencyRating) {
         super(ProductId, ProductName, StockLevel, Price); // Call parent constructor with all parameters
+        this.productType = "Heat Pump";
         this.efficiencyRating = efficiencyRating;
+    }
+    
+    // Getter for productType
+    public String getProductType() {
+        return productType;
+    }
+
+    // Setter for productType
+    public void setProductType(String productTypeIn) {
+        this.productType = productTypeIn;
     }
 
     // Getter for efficiencyRating

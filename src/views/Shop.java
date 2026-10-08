@@ -5,6 +5,7 @@
 package views;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import models.DBManager;
 import models.Product;
 
@@ -21,9 +22,9 @@ public class Shop extends javax.swing.JFrame {
      */
     public Shop() {
         DBManager db = new DBManager();
-        allProducts = db.loadAnimals();
+        allProducts = db.loadProducts();
         initComponents();
-        initComponents();
+
     }
 
     /**
@@ -53,10 +54,11 @@ public class Shop extends javax.swing.JFrame {
         jScrollPane1.setViewportView(lstSelectProduct);
 
         lstSelectCategory.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "HeatPump", "SolarPanel" };
+            String[] strings = { "Solar Panel", "Heat Pump" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        lstSelectCategory.addListSelectionListener(this::lstSelectCategoryValueChanged);
         jScrollPane2.setViewportView(lstSelectCategory);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -96,6 +98,25 @@ public class Shop extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lstSelectCategoryValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstSelectCategoryValueChanged
+        // TODO add your handling code here:
+        
+             
+        String productCategorySelected = lstSelectCategory.getSelectedValue();
+        System.out.println("clickdd: " + productCategorySelected);
+        
+        
+        //creating new list Model before manupulating the model the form!!!
+        DefaultListModel lstProductsModel = new DefaultListModel();
+        
+        for(Product product : allProducts){
+            if(product.getProductname().equals("models."+productCategorySelected)){
+                lstProductsModel.addElement(product);
+            }
+        }
+        lstSelectProduct.setModel(lstProductsModel);
+    }//GEN-LAST:event_lstSelectCategoryValueChanged
 
     /**
      * @param args the command line arguments

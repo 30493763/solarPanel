@@ -11,6 +11,16 @@ public class Product {
     private int StockLevel;
     private double Price;
 
+    
+    // methods
+    
+    @Override
+     public String toString(){
+        return ProductName + " the "+Price;
+    }
+    
+        
+        
     // Constructors
     // Default constructor
     public Product() {
