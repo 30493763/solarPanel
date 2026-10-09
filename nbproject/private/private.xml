@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/123/303123456_Shop/src/views/MainMenu.java</file>
             <file>file:/C:/123/303123456_Shop/src/views/Shop.java</file>
-            <file>file:/C:/123/303123456_Shop/src/models/HeatPump.java</file>
-            <file>file:/C:/123/303123456_Shop/src/models/DBManager.java</file>
-            <file>file:/C:/123/303123456_Shop/src/models/Product.java</file>
-            <file>file:/C:/123/303123456_Shop/src/models/SolarPanel.java</file>
+            <file>file:/C:/123/303123456_Shop/src/views/CustomerLogin.java</file>
+            <file>file:/C:/123/303123456_Shop/src/views/StaffHome.java</file>
+            <file>file:/C:/123/303123456_Shop/src/views/CustomerHome.java</file>
+            <file>file:/C:/123/303123456_Shop/src/views/StaffLogin.java</file>
         </group>
     </open-files>
 </project-private>

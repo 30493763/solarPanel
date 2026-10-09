@@ -104,6 +104,9 @@ public class StaffHome extends javax.swing.JFrame {
 
     private void btnStaffHome_ModifyProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffHome_ModifyProductActionPerformed
         // TODO add your handling code here:
+        Shop shop = new Shop();
+        shop.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnStaffHome_ModifyProductActionPerformed
 
     private void btnStaffHome_ViewAllOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffHome_ViewAllOrdersActionPerformed
