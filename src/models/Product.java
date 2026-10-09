@@ -10,6 +10,7 @@ public class Product {
     private String ProductName;
     private int StockLevel;
     private double Price;
+    private String ProductType;
 
     
     // methods
@@ -28,6 +29,8 @@ public class Product {
         ProductName = "ProductName_placeholder";
         StockLevel = 0;
         Price = 0;
+        ProductName = "ProductType_placeholder";
+
     }
     
     // Parameterized constructor with 3 parameters (without ProductId)
@@ -36,14 +39,16 @@ public class Product {
         this.StockLevel = StockLevel;
         this.Price = Price;
         this.ProductId = 101;
+        this.ProductType = "ProductType_placeholder";
     }
 
     // Parameterized constructor with full details including ProductId
-    public Product(int ProductIdIn, String ProductNameIn, int StockLevelIn, double PriceIn) {
+    public Product(int ProductIdIn, String ProductNameIn, int StockLevelIn, double PriceIn, String productTypeIn) {
         this.ProductId = ProductIdIn;
         this.ProductName = ProductNameIn;
         this.StockLevel = StockLevelIn;
         this.Price = PriceIn;
+        this.ProductType = productTypeIn;
     }
 
     // Getter for ProductId
@@ -84,6 +89,16 @@ public class Product {
     // Setter for Price
     public void setPrice(double priceIn) {
         this.Price = priceIn;
+    }
+    
+     // Getter for productType
+    public String getProductType() {
+        return ProductType;
+    }
+
+    // Setter for productType
+    public void setProductType(String productTypeIn) {
+        this.ProductType = productTypeIn;
     }
 }
 

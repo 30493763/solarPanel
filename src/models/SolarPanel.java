@@ -7,7 +7,6 @@ package models;
  */
 public class SolarPanel extends Product {
       // Private Attributes
-    private String productType;
     private int wattageOutput;
     
     //constructors:
@@ -15,7 +14,6 @@ public class SolarPanel extends Product {
     // Default constructor (HeatPump())
     public SolarPanel() {
         super();
-        productType = "Solar Panel";
         wattageOutput = 0;
     }
     
@@ -24,33 +22,33 @@ public class SolarPanel extends Product {
                     int StockLevelIn, 
                     double PriceIn,
                     int wattageOutputIn) {
-        super(0, ProductNameIn, StockLevelIn, PriceIn); // Call parent constructor without ProductId
-        this.productType = "Solar Panel";
+        super(0, ProductNameIn, StockLevelIn, PriceIn, "Solar Panel"); // Call parent constructor without ProductId
         this.wattageOutput = wattageOutputIn;
         
     }
     
     
-    // Parameterized constructor with 5 parameters (Everything)
+    // Parameterized constructor with 5 parameters (except ProductType)
     public SolarPanel(int ProductId, 
                     String ProductName, 
                     int StockLevel, 
                     double Price,
                     int wattageOutputIn) {
-        super(ProductId, ProductName, StockLevel, Price); // Call parent constructor with all parameters
-        this.productType = "Solar Panel";
+        super(ProductId, ProductName, StockLevel, Price, "Solar Panel"); // Call parent constructor with all parameters
+
         this.wattageOutput = wattageOutputIn;
     }
-   
-    // Getter for productType
-    public String getProductType() {
-        return productType;
-    }
 
-    // Setter for productType
-    public void setProductType(String productTypeIn) {
-        this.productType = productTypeIn;
-    }
+   
+//    // Getter for productType
+//    public String getProductType() {
+//        return productType;
+//    }
+//
+//    // Setter for productType
+//    public void setProductType(String productTypeIn) {
+//        this.productType = productTypeIn;
+//    }
     
     // Getter for wattageOutput
     public int getWattageOutput() {

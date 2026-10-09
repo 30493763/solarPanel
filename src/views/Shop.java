@@ -111,7 +111,9 @@ public class Shop extends javax.swing.JFrame {
         DefaultListModel lstProductsModel = new DefaultListModel();
         
         for(Product product : allProducts){
-            if(product.getProductname().equals("models."+productCategorySelected)){
+            System.out.println("in for loop, product.getProductType(): " + product.getProductType());
+        
+            if(product.getProductType().equals(productCategorySelected)){
                 lstProductsModel.addElement(product);
             }
         }
