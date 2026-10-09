@@ -33,64 +33,93 @@ public class CustomerHome extends javax.swing.JFrame {
         btnCustomerHome_ViewMyOrder1 = new javax.swing.JButton();
         btnCustomerHome_EditOrders1 = new javax.swing.JButton();
         btnCustomerHome_Logout = new javax.swing.JButton();
+        lblStaffHome = new javax.swing.JLabel();
+        btnCustomerHome_BackToMain = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         btnCustomerHome_UnregisterFromShop.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCustomerHome_UnregisterFromShop.setText("Unregister from Shop");
+        btnCustomerHome_UnregisterFromShop.setText("UNREGISTER FROM SHOP");
         btnCustomerHome_UnregisterFromShop.setToolTipText("");
 
         btnCustomerHome_BrowseProduct1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCustomerHome_BrowseProduct1.setText("Browse Product");
+        btnCustomerHome_BrowseProduct1.setText("BROWSE PRODUCTS");
 
         btnCustomerHome_ViewMyOrder1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCustomerHome_ViewMyOrder1.setText("View Orders");
+        btnCustomerHome_ViewMyOrder1.setText("VIEW ORDER");
         btnCustomerHome_ViewMyOrder1.setToolTipText("");
 
         btnCustomerHome_EditOrders1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCustomerHome_EditOrders1.setText("Edit Details");
+        btnCustomerHome_EditOrders1.setText("EDIT DETAILS");
         btnCustomerHome_EditOrders1.setToolTipText("");
 
-        btnCustomerHome_Logout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCustomerHome_Logout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCustomerHome_Logout.setText("Logout");
         btnCustomerHome_Logout.setToolTipText("");
+
+        lblStaffHome.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblStaffHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblStaffHome.setText("CUSTOMER HOME");
+
+        btnCustomerHome_BackToMain.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCustomerHome_BackToMain.setText("MAIN");
+        btnCustomerHome_BackToMain.addActionListener(this::btnCustomerHome_BackToMainActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(259, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnCustomerHome_BrowseProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCustomerHome_EditOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCustomerHome_ViewMyOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCustomerHome_UnregisterFromShop, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(btnCustomerHome_Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                            .addComponent(btnCustomerHome_BrowseProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCustomerHome_EditOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCustomerHome_ViewMyOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCustomerHome_UnregisterFromShop, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(252, 252, 252))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblStaffHome, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(235, 235, 235))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(btnCustomerHome_BackToMain, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCustomerHome_Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(btnCustomerHome_BrowseProduct1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnCustomerHome_BackToMain, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCustomerHome_Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addComponent(lblStaffHome, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
+                .addComponent(btnCustomerHome_BrowseProduct1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCustomerHome_ViewMyOrder1)
+                .addComponent(btnCustomerHome_ViewMyOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCustomerHome_EditOrders1)
+                .addComponent(btnCustomerHome_EditOrders1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCustomerHome_UnregisterFromShop)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(btnCustomerHome_Logout)
-                .addGap(19, 19, 19))
+                .addComponent(btnCustomerHome_UnregisterFromShop, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCustomerHome_BackToMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerHome_BackToMainActionPerformed
+        // TODO add your handling code here:
+        MainMenu mMenu = new MainMenu();
+        mMenu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCustomerHome_BackToMainActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,10 +147,12 @@ public class CustomerHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCustomerHome_BackToMain;
     private javax.swing.JButton btnCustomerHome_BrowseProduct1;
     private javax.swing.JButton btnCustomerHome_EditOrders1;
     private javax.swing.JButton btnCustomerHome_Logout;
     private javax.swing.JButton btnCustomerHome_UnregisterFromShop;
     private javax.swing.JButton btnCustomerHome_ViewMyOrder1;
+    private javax.swing.JLabel lblStaffHome;
     // End of variables declaration//GEN-END:variables
 }

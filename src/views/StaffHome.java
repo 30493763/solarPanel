@@ -35,59 +35,68 @@ public class StaffHome extends javax.swing.JFrame {
         btnStaffHome_Logout = new javax.swing.JButton();
         btnStaffHome_ViewAllOrders = new javax.swing.JButton();
         lblStaffHome = new javax.swing.JLabel();
+        btnStaffLoginBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         btnStaffHome_ModifyProduct.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnStaffHome_ModifyProduct.setText("Modify Product");
+        btnStaffHome_ModifyProduct.setText("MODIFY PRODUCT");
         btnStaffHome_ModifyProduct.addActionListener(this::btnStaffHome_ModifyProductActionPerformed);
 
-        btnStaffHome_Logout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnStaffHome_Logout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnStaffHome_Logout.setText("Logout");
         btnStaffHome_Logout.setToolTipText("");
 
         btnStaffHome_ViewAllOrders.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnStaffHome_ViewAllOrders.setText("View All Orders");
+        btnStaffHome_ViewAllOrders.setText("VIEW ALL ORDERS");
         btnStaffHome_ViewAllOrders.addActionListener(this::btnStaffHome_ViewAllOrdersActionPerformed);
+
+        lblStaffHome.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblStaffHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblStaffHome.setText("STAFF HOME");
+
+        btnStaffLoginBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnStaffLoginBack.setText("MAIN");
+        btnStaffLoginBack.addActionListener(this::btnStaffLoginBackActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(btnStaffLoginBack, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblStaffHome, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(222, 222, 222))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnStaffHome_Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(btnStaffHome_ViewAllOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(lblStaffHome, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(82, 82, 82)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnStaffHome_ModifyProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(46, 46, 46)
-                            .addComponent(btnStaffHome_Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(83, Short.MAX_VALUE)))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnStaffHome_ModifyProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnStaffHome_ViewAllOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(btnStaffHome_ViewAllOrders)
-                .addGap(18, 18, 18)
-                .addComponent(lblStaffHome, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(24, 24, 24)
-                    .addComponent(btnStaffHome_ModifyProduct)
-                    .addGap(188, 188, 188)
-                    .addComponent(btnStaffHome_Logout)
-                    .addContainerGap(24, Short.MAX_VALUE)))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnStaffLoginBack, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStaffHome_Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addComponent(lblStaffHome, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(107, 107, 107)
+                .addComponent(btnStaffHome_ViewAllOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(btnStaffHome_ModifyProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(226, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,6 +109,13 @@ public class StaffHome extends javax.swing.JFrame {
     private void btnStaffHome_ViewAllOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffHome_ViewAllOrdersActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnStaffHome_ViewAllOrdersActionPerformed
+
+    private void btnStaffLoginBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffLoginBackActionPerformed
+        // TODO add your handling code here:
+        MainMenu mMenu = new MainMenu();
+        mMenu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnStaffLoginBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,6 +146,7 @@ public class StaffHome extends javax.swing.JFrame {
     private javax.swing.JButton btnStaffHome_Logout;
     private javax.swing.JButton btnStaffHome_ModifyProduct;
     private javax.swing.JButton btnStaffHome_ViewAllOrders;
+    private javax.swing.JButton btnStaffLoginBack;
     private javax.swing.JLabel lblStaffHome;
     // End of variables declaration//GEN-END:variables
 }

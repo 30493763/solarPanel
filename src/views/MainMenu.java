@@ -34,22 +34,26 @@ public class MainMenu extends javax.swing.JFrame {
         btnStaffLogin1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
-        lblMainMenu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblMainMenu.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblMainMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMainMenu.setText("Main Menu");
+        lblMainMenu.setText("MAIN MENU");
         lblMainMenu.setToolTipText("");
 
-        btnViewProduct.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnViewProduct.setText("View Product");
+        btnViewProduct.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnViewProduct.setText("VIEW PRODUCTS");
         btnViewProduct.addActionListener(this::btnViewProductActionPerformed);
 
-        btnCustomerLogin1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnCustomerLogin1.setText("Customer Login");
+        btnCustomerLogin1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCustomerLogin1.setText("CUSTOMER LOGIN");
+        btnCustomerLogin1.setActionCommand("CUSTOMER LOGIN");
         btnCustomerLogin1.addActionListener(this::btnCustomerLogin1ActionPerformed);
 
-        btnStaffLogin1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnStaffLogin1.setText("Staff Login");
+        btnStaffLogin1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnStaffLogin1.setText("STAFF LOGIN");
+        btnStaffLogin1.setActionCommand("STAFF LOGIN");
         btnStaffLogin1.addActionListener(this::btnStaffLogin1ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -57,37 +61,30 @@ public class MainMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(188, 188, 188)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(lblMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnStaffLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnViewProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(83, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(79, 79, 79)
-                    .addComponent(btnCustomerLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(87, Short.MAX_VALUE)))
+                        .addGap(87, 87, 87)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnCustomerLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnViewProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnStaffLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(lblMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(75, 75, 75)
                 .addComponent(lblMainMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(btnStaffLogin1)
+                .addGap(115, 115, 115)
+                .addComponent(btnCustomerLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnStaffLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(btnViewProduct)
-                .addGap(62, 62, 62))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(82, 82, 82)
-                    .addComponent(btnCustomerLogin1)
-                    .addContainerGap(186, Short.MAX_VALUE)))
+                .addComponent(btnViewProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         pack();
@@ -95,6 +92,9 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void btnViewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewProductActionPerformed
         // TODO add your handling code here:
+        Shop shop = new Shop();
+        shop.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnViewProductActionPerformed
 
     private void btnCustomerLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerLogin1ActionPerformed
